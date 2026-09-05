@@ -74,6 +74,9 @@ img{max-width:100%;display:block}
 .btn--light:hover{transform:translateY(-2px)}
 .btn--wire{border-color:rgba(255,255,255,.45);color:#fff}
 .btn--wire:hover{background:rgba(255,255,255,.12)}
+/* Taglia grande per i pulsanti di chiamata: sono l'azione della pagina e
+   devono staccare dai link secondari, non pareggiarli. */
+.btn--lg{font-size:1.1rem;padding:1.15rem 2.1rem}
 .btn--wire-d{border-color:var(--line);color:var(--navy)}
 .btn--wire-d:hover{background:var(--paper-2)}
 
@@ -314,6 +317,30 @@ blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
 .place a{font-size:.88rem;font-weight:600;color:var(--sage);text-decoration:none;border-bottom:1px solid rgba(169,198,198,.4)}
 .place a:hover{border-color:var(--sage)}
 
+/* Fascia di richiamo ripetuta tra una sezione e l'altra. Ha uno sfondo
+   proprio, cosi' la stessa fascia regge sulle sezioni chiare, su quelle
+   tinte e su quelle scure senza doverne scrivere tre varianti. */
+.ctaline{margin-top:clamp(2.2rem,4.5vw,3.2rem);background:var(--cobalt);border-radius:22px;
+  padding:clamp(1.3rem,3vw,1.9rem) clamp(1.4rem,3.5vw,2.2rem);
+  display:flex;align-items:center;justify-content:space-between;gap:1.1rem 1.8rem;flex-wrap:wrap;
+  box-shadow:0 22px 44px -26px rgba(11,68,176,.95)}
+.ctaline p{margin:0;font-size:clamp(1.02rem,.4vw + .95rem,1.18rem);color:#DCE7FB;max-width:44ch}
+.ctaline b{display:block;color:#fff;font-weight:800;font-size:1.12em;margin-bottom:.25rem}
+.ctaline .btn{flex:none}
+
+/* Barra di chiamata fissa sotto i 900px. Su telefono il numero deve restare
+   a portata di pollice in qualunque punto della pagina: senza, per chiamare
+   bisogna risalire fino alla hero. Il padding in fondo al body tiene conto
+   della barra, che altrimenti coprirebbe le ultime righe del footer. */
+.callbar{display:none}
+@media (max-width:900px){
+  .callbar{display:flex;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));
+    background:rgba(1,30,82,.94);border-top:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px)}
+  .callbar .btn{flex:1 1 0;justify-content:center;padding:.95rem .8rem;font-size:1rem}
+  body{padding-bottom:5.4rem}
+}
+
 .cta{margin-top:clamp(2.2rem,4.5vw,3.4rem);display:grid;grid-template-columns:1.25fr 1fr;gap:1.8rem;align-items:center;
   background:linear-gradient(120deg,var(--cobalt),#0A2E86);border-radius:26px;padding:clamp(1.9rem,4vw,3rem);position:relative;overflow:hidden}
 .cta::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;border:44px solid rgba(255,255,255,.07)}
@@ -358,6 +385,12 @@ blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
 <body>
 <a class="skip" href="#main">Salta al contenuto</a>
 
+<!-- Barra di chiamata sempre visibile su telefono. -->
+<div class="callbar">
+  <a class="btn btn--go" href="tel:+390000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Chiama ora</a>
+  <a class="btn btn--wire" href="#sedi">Sedi</a>
+</div>
+
 <header class="site-header" id="hdr">
   <div class="wrap">
     <a class="brand" href="#top">Denis Bonfiglio<span>Fisioterapista &middot; Genova</span></a>
@@ -388,7 +421,7 @@ blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
       <p class="lede">Terapia manuale, riabilitazione dopo un intervento, infortuni sportivi. Ricevo in quattro studi a Genova. Il dolore quasi mai sta dove lo senti: prima capisco da dove nasce, poi scelgo la terapia.</p>
 
       <div class="hero-actions">
-        <a class="btn btn--light" href="tel:+390000000000">
+        <a class="btn btn--light btn--lg" href="tel:+390000000000">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
           000 000 0000
         </a>
@@ -396,7 +429,9 @@ blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
       </div>
 
       <div class="hero-strip">
-        <!-- Per aggiungere gli anni di esperienza: <div><b data-count="15">0</b>Anni di lavoro sul campo</div> -->
+        <!-- SEGNAPOSTO: sostituire la X con gli anni veri. Niente data-count,
+             che animerebbe un conteggio verso un numero inventato. -->
+        <div><b>+X</b>Anni di esperienza</div>
         <div><b data-count="4">0</b>Studi in cui ricevo a Genova</div>
         <div><b>8&ndash;20</b>Dal lunedì al venerdì</div>
         <div><b>1:1</b>Sempre la stessa persona che ti segue</div>
@@ -435,6 +470,11 @@ blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
       </div>
 
       <p class="sig">Ricevo in quattro studi a Genova. Se non sai quale ti conviene, chiamami e lo decidiamo insieme.</p>
+    </div>
+
+    <div class="ctaline rv">
+      <p><b>Vuoi sapere se posso aiutarti?</b>Rispondo io. Lunedì&ndash;venerdì, 8:00&ndash;20:00.</p>
+      <a class="btn btn--light btn--lg" href="tel:+390000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Chiama ora</a>
     </div>
   </div>
 </section>
@@ -495,6 +535,11 @@ blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
           <span class="tag">Terapia manuale</span><span class="tag">Tecarterapia</span><span class="tag">Esercizi posturali</span>
         </div>
       </div>
+    </div>
+
+    <div class="ctaline rv">
+      <p><b>Hai riconosciuto il tuo punto?</b>Chiamami e vediamo insieme da dove nasce quel dolore.</p>
+      <a class="btn btn--light btn--lg" href="tel:+390000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Chiama 000 000 0000</a>
     </div>
   </div>
 </section>
@@ -564,6 +609,11 @@ blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
         <a class="btn btn--wire-d" href="#sedi" style="margin-top:.6rem">Vedi dove ricevo</a>
       </div>
     </div>
+
+    <div class="ctaline rv">
+      <p><b>Non sai quale trattamento ti serve?</b>Lo capiamo al telefono in due minuti, senza impegno.</p>
+      <a class="btn btn--light btn--lg" href="tel:+390000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Chiama ora</a>
+    </div>
   </div>
 </section>
 
@@ -609,7 +659,7 @@ blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
         <p>Due minuti al telefono bastano per capire se la fisioterapia è la strada giusta e in quanto tempo se ne esce. Lunedì&ndash;venerdì, 8:00&ndash;20:00.</p>
       </div>
       <div>
-        <a class="btn btn--light" href="tel:+390000000000">
+        <a class="btn btn--light btn--lg" href="tel:+390000000000">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
           000 000 0000
         </a>
