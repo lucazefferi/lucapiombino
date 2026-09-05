@@ -107,7 +107,15 @@ img{max-width:100%;display:block}
 }
 .hero .wrap{position:relative;z-index:2}
 .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-@media (max-width:940px){.hero-grid{grid-template-columns:1fr;gap:2.5rem}}
+/* Sotto i 940px la hero si impila in una colonna sola. In ordine di sorgente
+   la foto finisce dopo titolo, testo e pulsanti, cioe' fuori dalla prima
+   schermata: su telefono si apre la pagina e non si vede. order:-1 la
+   riporta in cima senza toccare l'ordine del markup, che su desktop regge
+   le due colonne (testo a sinistra, foto a destra). */
+@media (max-width:940px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-grid .scanbox{order:-1}
+}
 
 .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.86rem;font-weight:600;color:var(--sage);margin-bottom:1.5rem}
 .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--sage);animation:beat 2.2s ease-in-out infinite}
