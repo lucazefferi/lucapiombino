@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luca Piombino | Fisioterapista e osteopatia a Genova</title>
+<meta name="description" content="Fisioterapista a Genova, in via Sturla 17R. Terapia manuale e osteopatia per le disfunzioni neuro-muscolo-scheletriche: schiena, spalla, collo e infortuni sportivi.">
+<meta name="theme-color" content="#011E52">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<meta property="og:title" content="Luca Piombino | Fisioterapista e osteopatia a Genova">
+<meta property="og:description" content="Prima capisco da dove nasce il dolore, poi scelgo la terapia.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+
+<style>
+/* =======================================================================
+   COLORI — presi dalle foto. Cambia solo qui.
+   ======================================================================= */
+:root{
+  color-scheme: light;
+  --cobalt:    #0B44B0;   /* blu divisa */
+  --cobalt-lt: #2E6BE0;   /* blu chiaro, bagliori */
+  --navy:      #011E52;   /* blu lettino, fondi scuri */
+  --navy-2:    #041537;   /* footer */
+  --paper:     #F1F5F9;   /* bianco freddo della clinica */
+  --paper-2:   #E3EBF3;
+  --surface:   #FFFFFF;
+  --ink:       #0C1A31;
+  --ink-soft:  #4E617C;
+  --line:      #CBD8E6;
+  --accent:    #B9CBE4;   /* grigio-azzurro chiaro, per gli accenti sul navy */
+
+  --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --pad: clamp(1.25rem, 4vw, 3rem);
+  --sect: clamp(4.5rem, 9vw, 8rem);
+  --max: 1200px;
+}
+
+/* ============================ Base ============================ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html{background:var(--paper)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font);font-size:clamp(1rem,.3vw + .95rem,1.09rem);
+  line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{margin:0;line-height:.98;letter-spacing:-.03em;font-weight:800;font-variation-settings:"wdth" 112}
+p{margin:0 0 1em}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--cobalt-lt);outline-offset:3px;border-radius:3px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:.6rem;z-index:99;background:var(--cobalt);color:#fff;padding:.7rem 1rem;border-radius:8px}
+
+/* ============================ Bottoni ============================ */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:1rem;
+  font-variation-settings:"wdth" 105;
+  padding:.95rem 1.6rem;border-radius:999px;border:2px solid transparent;
+  text-decoration:none;cursor:pointer;
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+.btn svg{width:1.05em;height:1.05em;flex:none}
+.btn--go{background:var(--cobalt);color:#fff;box-shadow:0 8px 22px -8px rgba(11,68,176,.8)}
+.btn--go:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(11,68,176,.85)}
+.btn--light{background:#fff;color:var(--navy)}
+.btn--light:hover{transform:translateY(-2px)}
+.btn--wire{border-color:rgba(255,255,255,.45);color:#fff}
+.btn--wire:hover{background:rgba(255,255,255,.12)}
+/* Taglia grande per i pulsanti di chiamata: sono l'azione della pagina e
+   devono staccare dai link secondari, non pareggiarli. */
+.btn--lg{font-size:1.1rem;padding:1.15rem 2.1rem}
+.btn--wire-d{border-color:var(--line);color:var(--navy)}
+.btn--wire-d:hover{background:var(--paper-2)}
+
+/* ============================ Header ============================ */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(1,30,82,.92);backdrop-filter:blur(12px) saturate(1.3);transition:background .3s ease}
+.site-header.past{background:rgba(1,30,82,.98);box-shadow:0 6px 26px -14px rgba(0,0,0,.7)}
+.site-header .wrap{display:flex;align-items:center;gap:1.4rem;min-height:70px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:clamp(1.22rem,.9rem + 1vw,1.5rem);letter-spacing:-.02em;line-height:1.12;font-variation-settings:"wdth" 108}
+.brand span{display:block;font-weight:400;font-size:.82rem;color:#9FB8DC;letter-spacing:.02em}
+.nav{margin-left:auto;display:flex;gap:1.5rem;font-size:.95rem;font-weight:500}
+.nav a{color:#C6D6EE;text-decoration:none;position:relative;padding-block:.35rem}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:.1rem;height:2px;background:var(--accent);transition:right .28s ease}
+.nav a:hover::after{right:0}
+.nav a:hover{color:#fff}
+.header-cta{padding:.58rem 1.15rem;font-size:.93rem;margin-left:auto}
+@media (min-width:901px){.header-cta{margin-left:.6rem}}
+/* Sotto i 900px compare la barra di chiamata fissa in fondo allo schermo:
+   due "Chiama ora" contemporaneamente sono uno di troppo, e quello in
+   basso e' piu' comodo da raggiungere. Sopra i 900px la barra non c'e',
+   quindi questo resta l'unico invito sempre visibile e va tenuto. */
+@media (max-width:900px){.header-cta{display:none}}
+@media (max-width:900px){.nav{display:none}}
+
+/* ============================ HERO ============================ */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden;padding-block:clamp(3rem,7vw,5.5rem) clamp(3.5rem,8vw,6rem)}
+.hero::before{
+  content:"";position:absolute;inset:-30% -10% auto -20%;height:120%;
+  background:radial-gradient(60% 55% at 22% 32%, rgba(46,107,224,.55), transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;
+  background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent 75%);
+}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+/* Sotto i 940px la hero si impila in una colonna sola e la foto del
+   trattamento va letta subito dopo il titolo, prima del paragrafo.
+   Titolo e paragrafo pero' stanno dentro lo stesso <div>, che nella
+   griglia e' un item unico: order da solo non puo' infilarsi in mezzo.
+   display:contents scioglie quel div come box e promuove i suoi figli a
+   item della griglia, cosi' l'ordine si puo' decidere elemento per
+   elemento. Il markup resta invariato e su desktop il div torna un
+   blocco normale: le due colonne (testo a sinistra, foto a destra)
+   restano come sono.
+   gap:0 perche' a quel punto la spaziatura verticale e' gia' data dai
+   margini dei singoli elementi; il gap della griglia si sommerebbe. */
+@media (max-width:940px){
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .hero-grid > div:first-child{display:contents}
+  .hero-grid .eyebrow{order:1;justify-self:start}
+  .hero-grid h1{order:2}
+  .hero-grid .scanbox{order:3;margin-top:2rem}
+  .hero-grid .lede{order:4}
+  .hero-grid .hero-actions{order:5}
+  .hero-grid .hero-strip{order:6}
+}
+
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.86rem;font-weight:600;color:var(--accent);margin-bottom:1.5rem}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:beat 2.2s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.35}}
+
+/* Titolo lungo tre righe piene: alla misura precedente, pensata per due
+   parole, occupava da solo tutta la prima schermata del telefono. */
+.hero h1{font-size:clamp(1.9rem,4.6vw,3.5rem);font-weight:900;font-variation-settings:"wdth" 118}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln b{display:block;font-weight:inherit;transform:translateY(105%);animation:riseIn .95s cubic-bezier(.16,1,.3,1) forwards}
+.hero h1 .ln:nth-child(2) b{animation-delay:.1s}
+.hero h1 .ln:nth-child(3) b{animation-delay:.2s}
+.hero h1 em{font-style:normal;color:var(--accent)}
+@keyframes riseIn{to{transform:translateY(0)}}
+
+.hero .lede{font-weight:400;letter-spacing:normal;line-height:1.5;max-width:46ch;color:#BFD2EE;font-size:clamp(1.05rem,.45vw + .95rem,1.22rem);margin-top:1.6rem;opacity:0;animation:fadeUp .8s ease .55s forwards}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem;opacity:0;animation:fadeUp .8s ease .7s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.hero-strip{display:flex;flex-wrap:wrap;gap:1.6rem 2.6rem;margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.18);opacity:0;animation:fadeUp .8s ease .85s forwards}
+.hero-strip div{font-size:.9rem;color:#A9C1E4;line-height:1.35;max-width:17ch}
+.hero-strip b{display:block;font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.03em;font-variation-settings:"wdth" 118}
+
+/* --- foto hero --- */
+.scanbox{position:relative;isolation:isolate;
+  clip-path:inset(0 0 100% 0);animation:wipeIn 1.1s cubic-bezier(.16,1,.3,1) .25s forwards}
+@keyframes wipeIn{to{clip-path:inset(0 0 0 0)}}
+/* Il ritratto e' gia' ritagliato a cerchio, con gli angoli trasparenti.
+   Percio' niente sfondo, niente border-radius e niente box-shadow sul
+   contenitore: sotto gli angoli trasparenti ricomparirebbero come un
+   quadrato. L'ombra va sulla forma disegnata, quindi drop-shadow. */
+/* height:auto serve davvero: gli attributi width/height sull'<img> valgono
+   come regole CSS, e un'altezza esplicita disattiva aspect-ratio. Senza,
+   la foto restava alta 900px dentro un riquadro largo 460. */
+.scanbox img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;transform:scale(1.06);animation:settle 2.4s cubic-bezier(.16,1,.3,1) .3s forwards;
+  filter:drop-shadow(0 34px 60px rgba(0,0,0,.6))}
+@keyframes settle{to{transform:scale(1)}}
+
+/* ============================ Sezioni ============================ */
+.section{padding-block:var(--sect);background:var(--paper);color:var(--ink)}
+.section--tint{background:var(--paper-2)}
+.section--dark{background:var(--navy);color:#fff}
+.section-head{max-width:34ch;margin-bottom:clamp(2.4rem,4.5vw,3.6rem)}
+.section-head h2{font-size:clamp(2.1rem,4.4vw,3.35rem);font-weight:900;font-variation-settings:"wdth" 116}
+.section-head p{margin-top:1rem;color:var(--ink-soft)}
+.section--dark .section-head p{color:#B4CAE8}
+.kicker{display:inline-block;font-size:.84rem;font-weight:700;color:var(--cobalt);margin-bottom:.9rem}
+.section--dark .kicker{color:var(--accent)}
+
+/* --- reveal allo scroll --- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.08s}.rv[data-d="2"]{transition-delay:.16s}
+.rv[data-d="3"]{transition-delay:.24s}.rv[data-d="4"]{transition-delay:.32s}
+.rv[data-d="5"]{transition-delay:.4s}.rv[data-d="6"]{transition-delay:.48s}
+
+/* ============================ CHI SONO ============================ */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media (max-width:880px){.about{grid-template-columns:1fr}}
+/* Senza la foto accanto, la sezione e' una colonna sola. */
+.about--solo{grid-template-columns:1fr}
+.portrait{position:relative}
+.portrait img{width:100%;border-radius:24px;aspect-ratio:71/79;object-fit:cover;position:relative;z-index:2}
+.portrait::before{content:"";position:absolute;inset:auto -18px -18px 22px;height:72%;border-radius:24px;background:var(--accent);z-index:1}
+/* Il badge sta sopra la foto, appoggiato al bordo in basso a destra del
+   cerchio: piu' in fuori finirebbe sul fondo blu, staccato dal ritratto. */
+.scanbox .badge{
+  position:absolute;z-index:3;right:6%;bottom:10%;background:var(--cobalt);color:#fff;
+  border-radius:18px;padding:.8rem 1.05rem;line-height:1.15;box-shadow:0 18px 34px -18px rgba(0,0,0,.9)}
+.scanbox .badge b{display:block;font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
+.scanbox .badge span{font-size:.76rem;color:#CBDDFB}
+
+.about h2{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:900;font-variation-settings:"wdth" 116;margin:0 0 1.2rem}
+/* Ritmo verticale esplicito: i margini di default del browser cambiano da
+   elemento a elemento e la colonna risultava spaziata a caso. La misura di
+   riga si ferma a 60ch, oltre la quale il testo lungo diventa faticoso. */
+.about p{max-width:60ch;margin:0 0 1.05rem}
+.about .facts-label{display:block;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:2rem}
+.about .sig{color:var(--ink-soft);font-size:.92rem;margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:.85rem}
+@media (max-width:520px){.facts{grid-template-columns:1fr}}
+.facts div{background:var(--paper);padding:1rem 1.15rem}
+.facts b{display:block;font-size:.95rem;font-weight:700}
+.facts span{font-size:.86rem;color:var(--ink-soft)}
+
+/* ============================ MAPPA DEL CORPO ============================ */
+.mapwrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (max-width:860px){.mapwrap{grid-template-columns:1fr}}
+.figure-box{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.14);border-radius:26px;padding:1.5rem;display:grid;place-items:center;position:relative}
+.stage{position:relative;width:100%;max-width:300px;margin-inline:auto}
+.figure{width:100%;height:auto;display:block}
+
+/* --- tooltip sopra il manichino --- */
+.tip{
+  position:absolute;z-index:6;width:max-content;max-width:232px;
+  background:#fff;color:var(--ink);border-radius:16px;padding:.9rem 2rem .95rem 1rem;
+  box-shadow:0 24px 46px -18px rgba(0,0,0,.8);
+  opacity:0;pointer-events:none;
+  transform:translate(-50%,-100%) scale(.9);
+  transition:opacity .2s ease, transform .3s cubic-bezier(.16,1,.3,1);
+}
+.tip.below{transform:translate(-50%,0) scale(.9)}
+.tip.on{opacity:1;pointer-events:auto;transform:translate(-50%,-100%) scale(1)}
+.tip.below.on{transform:translate(-50%,0) scale(1)}
+.tip .ar{position:absolute;left:var(--ax,50%);width:14px;height:14px;background:#fff;transform:translateX(-50%) rotate(45deg)}
+.tip:not(.below) .ar{bottom:-6px}
+.tip.below .ar{top:-6px}
+.tip .t{display:block;font-size:1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.3rem}
+.tip .d{font-size:.84rem;line-height:1.45;color:var(--ink-soft);margin:0 0 .6rem}
+.tip .g{display:flex;flex-wrap:wrap;gap:.3rem}
+.tip .g span{font-size:.72rem;font-weight:700;color:var(--cobalt);background:#EAF0FC;border-radius:999px;padding:.16rem .5rem}
+.tip .x{position:absolute;top:.5rem;right:.5rem;width:24px;height:24px;border:0;border-radius:50%;
+  background:var(--paper-2);color:var(--ink-soft);font-size:1rem;line-height:1;cursor:pointer;padding:0}
+.tip .x:hover{background:var(--line)}
+.figure .limb{stroke:rgba(185,203,228,.5);stroke-width:19;stroke-linecap:round;fill:none;
+  stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.figure .mass{fill:none;stroke:rgba(185,203,228,.5);stroke-width:2.5;
+  stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.drawn .limb,.drawn .mass{animation:draw 1.5s cubic-bezier(.5,0,.2,1) forwards}
+.drawn .limb:nth-of-type(2){animation-delay:.12s}
+.drawn .limb:nth-of-type(3){animation-delay:.22s}
+.drawn .limb:nth-of-type(4){animation-delay:.32s}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+@keyframes pinIn{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+.spot{cursor:pointer;opacity:0}
+.drawn .spot{animation:pinIn .45s cubic-bezier(.16,1,.3,1) forwards}
+.spot .dot{fill:var(--cobalt-lt);transition:fill .2s ease,transform .2s ease;transform-origin:center;transform-box:fill-box}
+.spot .ring{fill:none;stroke:var(--accent);stroke-width:1.6;opacity:0;transition:opacity .2s ease}
+.spot:hover .dot{fill:#fff}
+.spot[aria-pressed="true"] .dot{fill:var(--accent);transform:scale(1.25)}
+.spot[aria-pressed="true"] .ring{opacity:.85}
+.spot:focus-visible{outline:none}
+.spot:focus-visible .ring{opacity:1;stroke-width:2.6}
+
+.zone{min-height:250px}
+.zone .num{font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.zone h3{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;font-variation-settings:"wdth" 116;margin:.5rem 0 .8rem}
+.zone p{color:#B4CAE8;max-width:44ch}
+.zone .tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
+.tag{font-size:.8rem;font-weight:600;color:#DCEAEA;border:1px solid rgba(185,203,228,.45);background:rgba(185,203,228,.1);border-radius:999px;padding:.32rem .8rem}
+.zone .swap{animation:swapIn .45s cubic-bezier(.16,1,.3,1)}
+@keyframes swapIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ============================ PERCORSO ============================ */
+.flow{display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (max-width:880px){.flow{grid-template-columns:1fr}}
+.steps{display:grid;gap:0}
+.step{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .n{width:38px;height:38px;border-radius:50%;background:var(--cobalt);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.95rem}
+.step h3{font-size:1.2rem;font-weight:800;margin-bottom:.35rem}
+.step p{font-size:.96rem;color:var(--ink-soft);margin:0}
+.flow-img{border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -34px rgba(1,30,82,.6)}
+.flow-img img{width:100%;aspect-ratio:669/799;object-fit:cover}
+
+/* ============================ TRATTAMENTI ============================ */
+.care{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+@media (max-width:880px){.care{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.care{grid-template-columns:1fr}}
+.care article{background:var(--surface);padding:1.8rem 1.6rem;transition:background .25s ease}
+.care article:hover{background:#F7FAFD}
+.care svg{width:30px;height:30px;stroke:var(--cobalt);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:1rem}
+.care h3{font-size:1.1rem;font-weight:800;margin-bottom:.45rem}
+.care p{font-size:.94rem;color:var(--ink-soft);margin:0}
+
+.split{display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,4rem);align-items:center;margin-top:clamp(2.5rem,5vw,4rem)}
+@media (max-width:880px){.split{grid-template-columns:1fr}}
+.split-img{border-radius:24px;overflow:hidden}
+.split-img img{width:100%;aspect-ratio:633/793;object-fit:cover}
+.split h3{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:900;font-variation-settings:"wdth" 116;margin-bottom:1rem}
+.split p{color:var(--ink-soft);max-width:46ch}
+
+/* ============================ RECENSIONI ============================ */
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,2.5vw,2rem)}
+@media (max-width:820px){.quotes{grid-template-columns:1fr}}
+blockquote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:1.9rem 1.7rem;position:relative}
+blockquote::before{content:"";position:absolute;left:1.7rem;top:0;width:44px;height:4px;background:var(--cobalt);border-radius:0 0 4px 4px}
+blockquote p{font-size:1.1rem;margin-bottom:1.1rem}
+blockquote footer{font-size:.88rem;font-weight:600;color:var(--ink-soft)}
+.note{font-size:.85rem;color:var(--ink-soft);margin-top:1.2rem}
+
+/* ============================ SEDI + CONTATTI ============================ */
+.places{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);border-radius:22px;overflow:hidden}
+@media (max-width:860px){.places{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.places{grid-template-columns:1fr}}
+/* Con una sede sola la griglia a quattro colonne lascerebbe tre buchi. */
+.places--one{grid-template-columns:1fr;max-width:26rem}
+.place{background:var(--navy);padding:1.5rem 1.4rem;transition:background .25s ease}
+.place:hover{background:#052A6B}
+.place h3{font-size:1.02rem;font-weight:800;margin-bottom:.3rem}
+.place p{font-size:.92rem;color:#A9C1E4;margin:0 0 .8rem}
+.place a{font-size:.88rem;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(185,203,228,.4)}
+.place a:hover{border-color:var(--accent)}
+
+/* Fascia di richiamo ripetuta tra una sezione e l'altra. Ha uno sfondo
+   proprio, cosi' la stessa fascia regge sulle sezioni chiare, su quelle
+   tinte e su quelle scure senza doverne scrivere tre varianti. */
+.ctaline{margin-top:clamp(2.2rem,4.5vw,3.2rem);background:var(--cobalt);border-radius:22px;
+  padding:clamp(1.3rem,3vw,1.9rem) clamp(1.4rem,3.5vw,2.2rem);
+  display:flex;align-items:center;justify-content:space-between;gap:1.1rem 1.8rem;flex-wrap:wrap;
+  box-shadow:0 22px 44px -26px rgba(11,68,176,.95)}
+.ctaline p{margin:0;font-size:clamp(1.02rem,.4vw + .95rem,1.18rem);color:#DCE7FB;max-width:44ch}
+.ctaline b{display:block;color:#fff;font-weight:800;font-size:1.12em;margin-bottom:.25rem}
+.ctaline .btn{flex:none}
+
+/* Barra di chiamata fissa sotto i 900px. Su telefono il numero deve restare
+   a portata di pollice in qualunque punto della pagina: senza, per chiamare
+   bisogna risalire fino alla hero. Il padding in fondo al body tiene conto
+   della barra, che altrimenti coprirebbe le ultime righe del footer. */
+.callbar{display:none}
+@media (max-width:900px){
+  .callbar{display:flex;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));
+    background:rgba(1,30,82,.94);border-top:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px)}
+  .callbar .btn{flex:1 1 0;justify-content:center;padding:.95rem .8rem;font-size:1rem}
+  body{padding-bottom:5.4rem}
+}
+
+.cta{margin-top:clamp(2.2rem,4.5vw,3.4rem);display:grid;grid-template-columns:1.25fr 1fr;gap:1.8rem;align-items:center;
+  background:linear-gradient(120deg,var(--cobalt),#0A2E86);border-radius:26px;padding:clamp(1.9rem,4vw,3rem);position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;border:44px solid rgba(255,255,255,.07)}
+@media (max-width:760px){.cta{grid-template-columns:1fr}}
+.cta h2{font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:900;font-variation-settings:"wdth" 116;color:#fff;position:relative;z-index:2}
+.cta p{color:#CBDDFB;margin:.9rem 0 0;max-width:40ch;position:relative;z-index:2}
+.cta .btn{position:relative;z-index:2}
+
+/* ============================ Footer ============================ */
+.site-footer{background:var(--navy-2);color:#9FB8DC;padding-block:2.8rem;font-size:.9rem}
+.site-footer .wrap+.wrap{margin-top:1.2rem}
+.foot-top{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
+.site-footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
+.disclaimer{max-width:64ch;color:#7C93B8;font-size:.82rem;line-height:1.55;margin:0}
+
+/* ============ Blocco del tema scuro forzato (browser in-app) ============ */
+@media (prefers-color-scheme: dark){
+  html,body{background:var(--paper);color:var(--ink)}
+  .section{background:var(--paper);color:var(--ink)}
+  .section--tint{background:var(--paper-2)}
+  .section--dark,.hero{background:var(--navy);color:#fff}
+  .surface,.care article,blockquote,.tip{background:var(--surface);color:var(--ink)}
+  .facts div{background:var(--paper)}
+  .place{background:var(--navy)}
+  .site-footer{background:var(--navy-2)}
+}
+
+/* ============================ Motion ridotto ============================ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .hero h1 .ln b{transform:none}
+  .hero .lede,.hero-actions,.hero-strip{opacity:1}
+  .scanbox{clip-path:none}
+  .scanbox img{transform:none}
+  .rv{opacity:1;transform:none}
+  .figure .limb,.figure .mass{stroke-dashoffset:0}
+  .spot{opacity:1}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Salta al contenuto</a>
+
+<!-- Barra di chiamata sempre visibile su telefono. -->
+<div class="callbar">
+  <a class="btn btn--go" href="tel:+390000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Chiama ora</a>
+  <a class="btn btn--wire" href="#sedi">Studio</a>
+</div>
+
+<header class="site-header" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top">Luca Piombino<span>Fisioterapista &middot; Genova</span></a>
+    <nav class="nav" aria-label="Principale">
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#mappa">Dove fa male</a>
+      <a href="#percorso">Come lavoro</a>
+      <a href="#trattamenti">Trattamenti</a>
+      <a href="#sedi">Studio</a>
+    </nav>
+    <!-- Recapiti segnaposto: il numero (+39 000 000 0000, prefisso inesistente in Italia) e il profilo Instagram sono finti, da sostituire con quelli reali prima di pubblicare il sito. -->
+    <a class="btn btn--go header-cta" href="tel:+390000000000">Chiama ora</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ==================== 1. HERO ==================== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow"><i></i>Fisioterapista a Genova</p>
+      <h1>
+        <span class="ln"><b>Il dolore neuro-muscolo-scheletrico</b></span>
+        <span class="ln"><b>non si risolve con i cerotti.</b></span>
+        <span class="ln"><b><em>Si risolve alla radice.</em></b></span>
+      </h1>
+      <h2 class="lede">Dott. Luca Piombino, fisioterapista e osteopata a Genova, in via Sturla. Trattamenti mirati per restituirti mobilità e performance.</h2>
+
+      <div class="hero-actions">
+        <a class="btn btn--light btn--lg" href="tel:+390000000000">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Prenota la prima valutazione
+        </a>
+        <a class="btn btn--wire" href="#mappa">Trova la tua zona</a>
+      </div>
+
+      <div class="hero-strip">
+        <!-- SEGNAPOSTO: sostituire la X con gli anni veri. Niente data-count,
+             che animerebbe un conteggio verso un numero inventato. -->
+        <div><b>+X</b>Anni di esperienza</div>
+        <div><b>Sturla</b>Lo studio, in via Sturla 17R</div>
+        <div><b>Master</b>In osteopatia, disfunzioni neuro-muscolo-scheletriche</div>
+        <div><b>1:1</b>Sempre la stessa persona che ti segue</div>
+      </div>
+    </div>
+
+    <div class="scanbox">
+      <img src="data:image/webp;base64,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" alt="Luca Piombino, fisioterapista a Genova" width="900" height="900" fetchpriority="high" decoding="async">
+      <div class="badge"><b>FNOFI</b><span>Albo dei Fisioterapisti</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 2. CHI SONO ==================== -->
+<section class="section" id="chi-sono">
+  <div class="wrap about about--solo">
+
+    <div class="rv" data-d="1">
+      <span class="kicker">Chi sono</span>
+      <h2>Perché non uso<br>percorsi fotocopia.</h2>
+      <p>Due persone con la stessa diagnosi si muovono in modo diverso, lavorano in modo diverso, guariscono in modo diverso. Per questo non ho mai creduto ai percorsi uguali per tutti.</p>
+      <p>Per questo la prima seduta la passo soprattutto a guardare e ad ascoltare. Ti chiedo cosa fai tutto il giorno, da quanto tempo senti quel dolore, cosa lo peggiora. Poi metto le mani e capisco il resto.</p>
+      <p>Le macchine servono, e le uso: tecar e laser fanno bene il loro mestiere quando sono puntate nel posto giusto. Ma il posto giusto lo trovi solo toccando.</p>
+
+      <span class="facts-label">Di cosa mi occupo</span>
+      <div class="facts">
+        <div><b>Terapia manuale</b><span>Manipolazioni e lavoro sui tessuti</span></div>
+        <div><b>Osteopatia</b><span>Master nelle disfunzioni neuro-muscolo-scheletriche</span></div>
+        <div><b>Post-operatorio</b><span>Fratture, protesi, ricostruzioni</span></div>
+        <div><b>Sport</b><span>Dal dolore acuto al ritorno in campo</span></div>
+      </div>
+
+      <p class="sig">Ricevo a Genova, in via Sturla 17R. Chiamami e troviamo insieme quando venire.</p>
+    </div>
+
+    <div class="ctaline rv">
+      <p><b>Vuoi sapere se posso aiutarti?</b>Rispondo io. Lunedì&ndash;venerdì, 8:00&ndash;20:00.</p>
+      <a class="btn btn--light btn--lg" href="tel:+390000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Chiama ora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 3. MAPPA DEL CORPO ==================== -->
+<section class="section section--dark" id="mappa">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="kicker">Dove fa male</span>
+      <h2>Scegli il punto. Ti dico cosa può essere.</h2>
+      <p>Otto zone, quelle per cui mi cercano più spesso. Tocca un punto sulla figura.</p>
+    </div>
+
+    <div class="mapwrap">
+      <div class="figure-box rv" id="figbox">
+        <div class="stage" id="stage">
+        <svg class="figure" viewBox="0 0 300 560" role="group" aria-label="Mappa del corpo: seleziona la zona dolorante" xmlns="http://www.w3.org/2000/svg">
+          <circle class="mass" cx="150" cy="52" r="31"/>
+          <path class="mass" d="M150 88c-26 0-48 10-52 26l-8 34c-2 9 0 18 4 26l6 12c3 6 4 13 4 20v42c0 10 20 16 46 16s46-6 46-16v-42c0-7 1-14 4-20l6-12c4-8 6-17 4-26l-8-34c-4-16-26-26-52-26z"/>
+          <path class="limb" d="M97 120 84 210l-10 74"/>
+          <path class="limb" d="M203 120l13 90 10 74"/>
+          <path class="limb" d="M126 262l-4 100 6 132"/>
+          <path class="limb" d="M174 262l4 100-6 132"/>
+
+          <g class="spot" data-zone="collo" role="button" tabindex="0" aria-pressed="true" aria-label="Collo e cervicale" style="animation-delay:.9s">
+            <circle class="ring" cx="150" cy="92" r="17"/><circle class="dot" cx="150" cy="92" r="9"/></g>
+          <g class="spot" data-zone="spalla" role="button" tabindex="0" aria-pressed="false" aria-label="Spalla" style="animation-delay:1s">
+            <circle class="ring" cx="101" cy="119" r="17"/><circle class="dot" cx="101" cy="119" r="9"/></g>
+          <g class="spot" data-zone="gomito" role="button" tabindex="0" aria-pressed="false" aria-label="Gomito" style="animation-delay:1.1s">
+            <circle class="ring" cx="84" cy="211" r="17"/><circle class="dot" cx="84" cy="211" r="9"/></g>
+          <g class="spot" data-zone="mano" role="button" tabindex="0" aria-pressed="false" aria-label="Polso e mano" style="animation-delay:1.2s">
+            <circle class="ring" cx="226" cy="284" r="17"/><circle class="dot" cx="226" cy="284" r="9"/></g>
+          <g class="spot" data-zone="schiena" role="button" tabindex="0" aria-pressed="false" aria-label="Schiena e zona lombare" style="animation-delay:1.3s">
+            <circle class="ring" cx="150" cy="228" r="17"/><circle class="dot" cx="150" cy="228" r="9"/></g>
+          <g class="spot" data-zone="anca" role="button" tabindex="0" aria-pressed="false" aria-label="Anca" style="animation-delay:1.4s">
+            <circle class="ring" cx="126" cy="272" r="17"/><circle class="dot" cx="126" cy="272" r="9"/></g>
+          <g class="spot" data-zone="ginocchio" role="button" tabindex="0" aria-pressed="false" aria-label="Ginocchio" style="animation-delay:1.5s">
+            <circle class="ring" cx="178" cy="366" r="17"/><circle class="dot" cx="178" cy="366" r="9"/></g>
+          <g class="spot" data-zone="caviglia" role="button" tabindex="0" aria-pressed="false" aria-label="Caviglia e piede" style="animation-delay:1.6s">
+            <circle class="ring" cx="128" cy="490" r="17"/><circle class="dot" cx="128" cy="490" r="9"/></g>
+        </svg>
+
+        <div class="tip" id="tip" role="status">
+          <span class="ar"></span>
+          <button class="x" type="button" id="tip-x" aria-label="Chiudi">&times;</button>
+          <b class="t" id="tip-t"></b>
+          <p class="d" id="tip-d"></p>
+          <div class="g" id="tip-g"></div>
+        </div>
+        </div>
+      </div>
+
+      <div class="zone rv" data-d="1" aria-live="polite">
+        <p class="num" id="z-num">Zona 1 di 8</p>
+        <h3 id="z-title">Collo e cervicale</h3>
+        <p id="z-desc">Rigidità al risveglio, difficoltà a girare la testa, dolore che risale verso la nuca. Spesso arriva da ore al computer o da un vecchio colpo di frusta.</p>
+        <div class="tags" id="z-tags">
+          <span class="tag">Terapia manuale</span><span class="tag">Tecarterapia</span><span class="tag">Esercizi posturali</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctaline rv">
+      <p><b>Hai riconosciuto il tuo punto?</b>Chiamami e vediamo insieme da dove nasce quel dolore.</p>
+      <a class="btn btn--light btn--lg" href="tel:+390000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Chiama 000 000 0000</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 4. COME LAVORO ==================== -->
+<section class="section" id="percorso">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="kicker">Come lavoro</span>
+      <h2>Quattro passaggi, sempre gli stessi</h2>
+      <p>Nessuna seduta comincia prima di aver capito con cosa abbiamo a che fare.</p>
+    </div>
+
+    <div class="flow">
+      <div class="steps">
+        <article class="step rv"><div class="n">1</div><div>
+          <h3>Ti ascolto e ti visito</h3>
+          <p>Cosa senti, da quanto, cosa lo peggiora. Ti guardo muovere. Se serve un esame o un consulto ortopedico, te lo dico subito.</p></div></article>
+        <article class="step rv" data-d="1"><div class="n">2</div><div>
+          <h3>Terapia manuale</h3>
+          <p>Manipolazioni e lavoro sui tessuti. È la parte che fa la differenza e non si può delegare a una macchina.</p></div></article>
+        <article class="step rv" data-d="2"><div class="n">3</div><div>
+          <h3>Strumenti, quando servono</h3>
+          <p>Tecarterapia e laser puntati sul punto giusto, per abbassare infiammazione e dolore e rimettere in moto l'articolazione.</p></div></article>
+        <article class="step rv" data-d="3"><div class="n">4</div><div>
+          <h3>Esercizi da portare a casa</h3>
+          <p>Pochi, precisi, spiegati bene. Servono a non ritrovarci qui tra sei mesi con lo stesso problema.</p></div></article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 5. TRATTAMENTI ==================== -->
+<section class="section section--tint" id="trattamenti">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="kicker">Trattamenti</span>
+      <h2>Cosa tratto</h2>
+      <p>Apparato muscolo-scheletrico, riabilitazione dopo intervento e recupero sportivo.</p>
+    </div>
+
+    <div class="care">
+      <article class="rv"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 20V8a2 2 0 0 1 4 0v8"/><path d="M15 16V6.5a2 2 0 0 1 4 0V16"/><path d="M19 16v-6a2 2 0 0 1 4 0v12a7 7 0 0 1-7 7h-1a7 7 0 0 1-6-3.5L6 20a2 2 0 0 1 3.2-2.4L11 20"/></svg>
+        <h3>Terapia manuale e manipolazioni</h3><p>Per blocchi articolari, contratture e limitazioni di movimento di collo, schiena e arti.</p></article>
+      <article class="rv" data-d="1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 22c3-6 6.5-9.5 11-9.5S24 16 27 22"/><path d="M9.5 25.5c2-4 4-6.5 6.5-6.5s4.5 2.5 6.5 6.5"/><circle cx="16" cy="7" r="3"/></svg>
+        <h3>Tecarterapia</h3><p>Diatermia sui tessuti profondi: infiammazioni croniche, tendiniti ed esiti di trauma.</p></article>
+      <article class="rv" data-d="2"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3v8"/><path d="m8.5 7 3.5 4.5M23.5 7 20 11.5"/><path d="M11 15h10l-2 13h-6z"/></svg>
+        <h3>Laserterapia</h3><p>Sul punto dolente, per ridurre l'infiammazione e accelerare il recupero dei tessuti.</p></article>
+      <article class="rv" data-d="3"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="5.5" r="3"/><path d="M16 9.5v10M9.5 13.5h13M12.5 28l3.5-8.5 3.5 8.5"/></svg>
+        <h3>Rieducazione posturale</h3><p>Esercizi mirati per schiena, collo e scoliosi, adattati a com'è fatta la tua giornata.</p></article>
+      <article class="rv" data-d="4"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="18" rx="3"/><path d="M7 16h4l2-4.5 3.5 9L19 14l1.5 2H25"/></svg>
+        <h3>Riabilitazione post-operatoria</h3><p>Dopo fratture, protesi e interventi: articolarità, forza e fiducia nel movimento.</p></article>
+      <article class="rv" data-d="5"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="12" cy="5.5" r="3"/><path d="m12 10.5-4.5 6.5 5.5 4 1 8"/><path d="m12 10.5 6.5 3 2.5 5"/><path d="m7.5 17-4-1"/></svg>
+        <h3>Infortuni sportivi</h3><p>Distorsioni, stiramenti, tendinopatie: dal dolore acuto al ritorno al gesto sportivo.</p></article>
+    </div>
+
+    <div class="split">
+      <div class="rv" data-d="1">
+        <h3>Il movimento si recupera un grado alla volta</h3>
+        <p>Dopo un intervento o un infortunio la parte più delicata non è il dolore: è la paura di muoversi. Si lavora insieme, gradualmente, finché il gesto torna naturale.</p>
+        <p>Ti spiego cosa sto facendo e perché, a ogni passaggio. Chi capisce il proprio recupero lo porta a termine.</p>
+        <a class="btn btn--wire-d" href="#sedi" style="margin-top:.6rem">Vedi dove ricevo</a>
+      </div>
+    </div>
+
+    <div class="ctaline rv">
+      <p><b>Non sai quale trattamento ti serve?</b>Lo capiamo al telefono in due minuti, senza impegno.</p>
+      <a class="btn btn--light btn--lg" href="tel:+390000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Chiama ora</a>
+    </div>
+  </div>
+</section>
+
+<!-- Qui stava la sezione recensioni. Le testimonianze raccolte erano di
+     pazienti di un altro studio e non potevano essere attribuite a
+     questo: la sezione torna quando ci sono recensioni proprie. -->
+
+<!-- ==================== 7. SEDI E CONTATTI ==================== -->
+<section class="section section--dark" id="sedi">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="kicker">Studio</span>
+      <h2>Dove ricevo a Genova</h2>
+      <p>Ricevo in via Sturla 17R. Chiamami per sapere quando c'è posto.</p>
+    </div>
+
+    <div class="places places--one">
+      <article class="place rv"><h3>Genova, Sturla</h3><p>Via Sturla 17R</p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Sturla+17R+Genova" target="_blank" rel="noopener">Apri in mappa</a></article>
+    </div>
+
+    <div class="cta rv" data-d="1">
+      <div>
+        <h2>Raccontami cosa senti</h2>
+        <p>Due minuti al telefono bastano per capire se la fisioterapia è la strada giusta e in quanto tempo se ne esce. Lunedì&ndash;venerdì, 8:00&ndash;20:00.</p>
+      </div>
+      <div>
+        <a class="btn btn--light btn--lg" href="tel:+390000000000">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Prenota la prima valutazione
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-top">
+    <div><strong style="color:#fff">Dott. Luca Piombino</strong> &middot; Fisioterapista, Genova &middot; Via Sturla 17R</div>
+    <div><a href="tel:+390000000000">000 000 0000</a> &middot; <a href="https://www.instagram.com/fisio.piombino/" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <div class="wrap">
+    <p class="disclaimer">Iscritto all'Albo dei Fisioterapisti (FNOFI). Le informazioni di questa pagina hanno scopo descrittivo e non sostituiscono una valutazione clinica. &copy; 2026</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var slow = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- header ---------- */
+  var hdr = document.getElementById("hdr");
+  addEventListener("scroll", function(){
+    hdr.classList.toggle("past", scrollY > 40);
+  }, {passive:true});
+
+  /* ---------- reveal allo scroll ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, {threshold:.16, rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+
+  /* ---------- disegno della figura + contatori ---------- */
+  var fig = document.getElementById("figbox");
+  if(fig){
+    fig.querySelectorAll(".figure path, .figure circle.mass").forEach(function(p){
+      try{ p.style.setProperty("--len", Math.ceil(p.getTotalLength ? p.getTotalLength() : 400)); }
+      catch(e){ p.style.setProperty("--len", 400); }
+    });
+    new IntersectionObserver(function(en,ob){
+      if(en[0].isIntersecting){ fig.querySelector(".figure").classList.add("drawn"); ob.disconnect(); }
+    },{threshold:.3}).observe(fig);
+  }
+
+  document.querySelectorAll("[data-count]").forEach(function(el){
+    var target = parseInt(el.dataset.count,10);
+    if(slow){ el.textContent = target; return; }
+    new IntersectionObserver(function(en,ob){
+      if(!en[0].isIntersecting) return;
+      ob.disconnect();
+      var t0 = null;
+      requestAnimationFrame(function step(ts){
+        if(!t0) t0 = ts;
+        var k = Math.min((ts-t0)/1100, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1-k,3)));
+        if(k < 1) requestAnimationFrame(step);
+      });
+    },{threshold:.6}).observe(el);
+  });
+
+  /* ---------- mappa del corpo ---------- */
+  var zones = {
+    collo:{s:"Rigidità e dolore che risale verso la nuca.",n:1,t:"Collo e cervicale",d:"Rigidità al risveglio, difficoltà a girare la testa, dolore che risale verso la nuca. Spesso arriva da ore al computer o da un vecchio colpo di frusta.",g:["Terapia manuale","Tecarterapia","Esercizi posturali"]},
+    spalla:{s:"Fatica ad alzare il braccio, dolore di notte.",n:2,t:"Spalla",d:"Fatica ad alzare il braccio, dolore che si fa sentire di notte, tendiniti della cuffia dei rotatori ed esiti di trauma o intervento.",g:["Terapia manuale","Laserterapia","Recupero articolarità"]},
+    gomito:{s:"Brucia quando stringi, sollevi o ruoti.",n:3,t:"Gomito",d:"Epicondilite ed epitrocleite: il dolore compare quando stringi, sollevi o ruoti l'avambraccio. Tipico di sport con racchetta e lavori manuali.",g:["Tecarterapia","Laserterapia","Esercizi eccentrici"]},
+    mano:{s:"Rigidità e poca forza dopo trauma o gesso.",n:4,t:"Polso e mano",d:"Dopo una frattura o un periodo di gesso restano rigidità e poca forza. Si recuperano con un lavoro graduale e costante.",g:["Mobilizzazione","Rinforzo progressivo"]},
+    schiena:{s:"Lombalgia, sciatica, blocchi improvvisi.",n:5,t:"Schiena e zona lombare",d:"Lombalgia, sciatica, blocchi improvvisi dopo un movimento banale. È il motivo per cui mi cercano più spesso.",g:["Manipolazioni","Tecarterapia","Rieducazione posturale"]},
+    anca:{s:"Dolore all'inguine o al gluteo, passo corto.",n:6,t:"Anca",d:"Dolore all'inguine o al gluteo, passo che si accorcia, artrosi e percorsi dopo intervento di protesi.",g:["Terapia manuale","Recupero del cammino"]},
+    ginocchio:{s:"Gonfiore e instabilità su scale e discese.",n:7,t:"Ginocchio",d:"Dopo un infortunio sportivo o un intervento, oppure per artrosi: gonfiore, instabilità e difficoltà su scale e discese.",g:["Laserterapia","Rinforzo","Rieducazione al gesto"]},
+    caviglia:{s:"Distorsioni, Achille, fascite plantare.",n:8,t:"Caviglia e piede",d:"Distorsioni che non guariscono del tutto, tendine d'Achille dolente, fascite plantare che si sente al primo passo del mattino.",g:["Tecarterapia","Propriocezione","Esercizi a casa"]}
+  };
+
+  var zNum=document.getElementById("z-num"), zT=document.getElementById("z-title"),
+      zD=document.getElementById("z-desc"), zG=document.getElementById("z-tags"),
+      spots=document.querySelectorAll(".spot"),
+      stage=document.getElementById("stage"),
+      tip=document.getElementById("tip"),
+      tipT=document.getElementById("tip-t"), tipD=document.getElementById("tip-d"),
+      tipG=document.getElementById("tip-g"), tipAr=tip && tip.querySelector(".ar");
+
+  function chips(box, list, cls){
+    box.innerHTML = "";
+    list.forEach(function(g){
+      var s=document.createElement("span");
+      if(cls) s.className = cls;
+      s.textContent=g; box.appendChild(s);
+    });
+  }
+
+  function placeTip(el){
+    var dot = el.querySelector(".dot");
+    var cx = +dot.getAttribute("cx"), cy = +dot.getAttribute("cy");
+    var sw = stage.clientWidth, sh = stage.clientHeight;
+    var x = cx / 300 * sw, y = cy / 560 * sh;
+
+    // sopra il punto, tranne che sulle zone alte dove non ci sta
+    var below = cy < 150;
+    tip.classList.toggle("below", below);
+    tip.style.top = (below ? y + 16 : y - 16) + "px";
+
+    // il tooltip può sconfinare nel padding del riquadro, mai oltre
+    var box = document.getElementById("figbox");
+    var br = box.getBoundingClientRect(), sr = stage.getBoundingClientRect();
+    var slackL = sr.left - br.left - 10, slackR = br.right - sr.right - 10;
+    tip.style.left = "0px";
+    var w = tip.offsetWidth;
+    var min = w/2 - slackL, max = sw - w/2 + slackR;
+    var cxPx = Math.max(min, Math.min(x, max));
+    tip.style.left = cxPx + "px";
+
+    // la freccia resta puntata sul punto anche se il tooltip è stato spostato
+    tipAr.style.setProperty("--ax", (w/2 + (x - cxPx)) + "px");
+  }
+
+  function paint(el, quiet){
+    var z = zones[el.dataset.zone];
+    if(!z) return;
+    spots.forEach(function(s){ s.setAttribute("aria-pressed", s===el ? "true":"false"); });
+
+    zNum.textContent = "Zona " + z.n + " di 8";
+    zT.textContent = z.t;
+    zD.textContent = z.d;
+    chips(zG, z.g, "tag");
+    [zT,zD,zG].forEach(function(n){
+      n.classList.remove("swap"); void n.offsetWidth; n.classList.add("swap");
+    });
+
+    if(tip){
+      tipT.textContent = z.t;
+      tipD.textContent = z.s;
+      chips(tipG, z.g);
+      tip.classList.add("on");
+      placeTip(el);
+      if(!quiet) lastSpot = el;
+    }
+  }
+
+  var lastSpot = null;
+  function closeTip(){ if(tip) tip.classList.remove("on"); }
+
+  spots.forEach(function(el){
+    el.addEventListener("click", function(e){ e.stopPropagation(); paint(el); });
+    el.addEventListener("keydown", function(e){
+      if(e.key==="Enter" || e.key===" "){ e.preventDefault(); e.stopPropagation(); paint(el); }
+    });
+  });
+
+  if(tip){
+    document.getElementById("tip-x").addEventListener("click", closeTip);
+    tip.addEventListener("click", function(e){ e.stopPropagation(); });
+    document.addEventListener("click", closeTip);
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeTip(); });
+    addEventListener("resize", function(){
+      if(lastSpot && tip.classList.contains("on")) placeTip(lastSpot);
+    });
+
+    // alla prima apertura mostro io un esempio, così si capisce subito che è toccabile
+    var demo = document.querySelector('.spot[data-zone="schiena"]');
+    new IntersectionObserver(function(en, ob){
+      if(!en[0].isIntersecting) return;
+      ob.disconnect();
+      setTimeout(function(){
+        if(!tip.classList.contains("on")){ lastSpot = demo; paint(demo, true); }
+      }, slow ? 300 : 2100);
+    }, {threshold:.4}).observe(document.getElementById("figbox"));
+  }
+})();
+</script>
+</body>
+</html>
